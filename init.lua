@@ -76,6 +76,17 @@ require("lazy").setup({
   -- Detect tabstop and shiftwidth automatically
   "tpope/vim-sleuth",
 
+  "RRethy/vim-illuminate",
+
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require('neoscroll').setup {
+        hide_cursor = false,
+      }
+    end
+  },
+
   {
     "folke/flash.nvim",
     event = "VeryLazy",
@@ -218,11 +229,23 @@ require("lazy").setup({
 
   {
     "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
     config = function()
-      require("copilot").setup()
+      require('copilot').setup {}
     end
   },
 
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {}
+  },
+
+  {
+    "abecodes/tabout.nvim",
+    opts = {}
+  },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
